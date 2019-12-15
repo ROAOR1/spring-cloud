@@ -19,6 +19,15 @@
         <relativePath/>
     </parent>
 
+    <modules>
+        <module>eureka-server-8001</module>
+        <module>eureka-server-8002</module>
+        <module>eureka-client-8003</module>
+        <module>eureka-client-8004</module>
+        <module>ribbon-client-8005</module>
+        <module>feign-client-8006</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
