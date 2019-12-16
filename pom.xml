@@ -26,6 +26,9 @@
         <module>eureka-client-8004</module>
         <module>ribbon-client-8005</module>
         <module>feign-client-8006</module>
+        <module>hystrix-client-8007</module>
+        <module>zuul-client-8008</module>
+        <module>config-server-8009</module>
     </modules>
 
     <properties>
