@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    config:
+      name: cloud-config #对应 {application}
+      label: master #对应{label}
+      profile: dev #对应{profile}
+      discovery:
+        enabled: true #开启 Config 服务发现支持
+        service-id: config-server #配置中心Id
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh #暴露了refresh接口
