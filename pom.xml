@@ -29,6 +29,9 @@
         <module>hystrix-client-8007</module>
         <module>zuul-client-8008</module>
         <module>config-server-8009</module>
+        <module>config-server-8010</module>
+        <module>config-client-8011</module>
+        <module>config-client-8012</module>
     </modules>
 
     <properties>
