@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: turbine
+server:
+  port: 9000
+management:
+  server:
+    port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/
+turbine:
+  app-config: eureka-client
+  cluster-name-expression: new String("default")
+  combine-host-port: true

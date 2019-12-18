@@ -1,5 +1,7 @@
 package com.example.eurekaclient8004.top.controller;
 
+import com.example.eurekaclient8004.top.service.MyHystrixService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,5 +34,16 @@ public class EurekaClient8004Controller {
         list.add("模拟请求结果：result2");
         list.add("模拟请求结果：result3");
         return list;
+    }
+
+    @Autowired
+    private MyHystrixService myHystrixService;
+
+    /**
+     * 测试时Hystrix仪表盘调用此方法
+     */
+    @RequestMapping("/hystrixTest")
+    public void hystrixTest(){
+        myHystrixService.execute();
     }
 }
