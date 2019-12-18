@@ -31,4 +31,20 @@ public class MyHystrixMergeController {
         System.out.println(future2.get());
         System.out.println(future3.get());
     }
+
+    @Autowired
+    private MyHystrixMergeService myHystrixMergeService;
+
+    @RequestMapping("/merge2")
+    public void merge3() throws ExecutionException, InterruptedException {
+        HystrixRequestContext context = HystrixRequestContext.initializeContext();
+
+        Future<Integer> future1 = myHystrixMergeService.merge(1);
+        Future<Integer> future2 = myHystrixMergeService.merge(2);
+        Future<Integer> future3 = myHystrixMergeService.merge(3);
+
+        System.out.println(future1.get());
+        System.out.println(future2.get());
+        System.out.println(future3.get());
+    }
 }
