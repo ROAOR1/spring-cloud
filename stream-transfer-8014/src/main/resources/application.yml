@@ -1,0 +1,24 @@
+server:
+  port: 8014
+spring:
+  application:
+    name: stream-producer
+  cloud:
+    stream:
+      binders: #在此处配置要绑定的rabbitmq的服务信息
+        myrabbit: #自定义的名称
+          type: rabbit #消息组件类型
+          environment: #设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                host: 127.0.0.1
+                port: 5672
+                username: guest
+                password: guest
+      bindings:
+        myInput: #绑定的通道，这里使用的是我们自定义的输入通道
+          destination: msg #从该目的地接受消息，上面消息发送者是向这个目的地发送消息
+          content-type: application/json #消息类型
+        myOutput: #绑定的通道，这里使用的是我们自定义的输出通道
+          destination: transfer-msg #消息中转者等会向这个目的地发送消息
+          content-type: application/json #消息类型
