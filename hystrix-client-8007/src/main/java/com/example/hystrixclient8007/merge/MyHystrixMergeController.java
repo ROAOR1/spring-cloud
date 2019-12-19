@@ -39,9 +39,9 @@ public class MyHystrixMergeController {
     public void merge3() throws ExecutionException, InterruptedException {
         HystrixRequestContext context = HystrixRequestContext.initializeContext();
 
-        Future<Integer> future1 = myHystrixMergeService.merge(1);
-        Future<Integer> future2 = myHystrixMergeService.merge(2);
-        Future<Integer> future3 = myHystrixMergeService.merge(3);
+        Future<String> future1 = myHystrixMergeService.merge(1);
+        Future<String> future2 = myHystrixMergeService.merge(2);
+        Future<String> future3 = myHystrixMergeService.merge(3);
 
         System.out.println(future1.get());
         System.out.println(future2.get());
