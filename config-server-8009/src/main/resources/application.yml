@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     config:
       server:
@@ -11,7 +16,16 @@ spring:
           username:
           password:
           search-paths: config #要搜索的路径，填我们刚刚创建的文件夹
+    bus:
+      enabled: true
+      trace:
+        enabled: true
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
