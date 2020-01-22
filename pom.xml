@@ -32,6 +32,9 @@
         <module>config-server-8010</module>
         <module>config-client-8011</module>
         <module>config-client-8012</module>
+        <module>stream-producer-8013</module>
+        <module>stream-transfer-8014</module>
+        <module>stream-consumer-8015</module>
         <module>turbine-client-9000</module>
     </modules>
 
