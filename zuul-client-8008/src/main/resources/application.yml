@@ -9,10 +9,7 @@ eureka:
       defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/
 zuul:
   routes:
-    #可以任意，一般都会和服务名相同
-    eureka-client:
-      #访问路径
-      path: /eureka-client/**
-      serviceId: eureka-client
-      #也可以直接映射到某个ip，一般不会这么做
-      #url: http://localhost:8003
+    eureka-client: #可以任意，一般都会和服务名相同
+      path: /eureka-client/** #访问路径
+      serviceId: eureka-client  #会映射到这个服务上
+      #url: http://localhost:8003 #也可以直接映射到某个地址，一般不会这么做
